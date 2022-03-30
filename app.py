@@ -6,7 +6,7 @@ from keras.models import load_model
 import streamlit as st 
  
 
-model = load_model('keras_model.h5')
+model = load_model('modles/keras_model.h5')
 
 # Title
 st.title('Stock Trend Prediction')
