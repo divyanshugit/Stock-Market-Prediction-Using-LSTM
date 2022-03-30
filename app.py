@@ -6,14 +6,14 @@ from keras.models import load_model
 import streamlit as st 
  
 
-model = load_model('modles/keras_model.h5')
+model = load_model('models/keras_model.h5')
 
 # Title
 st.title('Stock Trend Prediction')
 
 #Start and End
-start = '2010-01-01'
-end = '2019-12-31'
+start = '2012-01-01'
+end = '2022-02-28'
 
 #User Input
 user_input = st.text_input("Enter Stock Ticker", 'AAPL')
@@ -21,7 +21,7 @@ user_input = st.text_input("Enter Stock Ticker", 'AAPL')
 #Making df
 df = data.DataReader(user_input, 'yahoo', start,end)
 df = df.reset_index()
-st.subheader('Data from 2010 - 2019')
+st.subheader('Data from 2012 to 2022')
 st.write(df.describe())
 
 #Visualization
